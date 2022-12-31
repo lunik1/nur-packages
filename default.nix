@@ -6,4 +6,5 @@
   overlays = import ./overlays;
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
+  amazing-marvin = pkgs.callPackage ./pkgs/amazing-marvin { };
 }
