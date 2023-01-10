@@ -6,4 +6,5 @@
   overlays = import ./overlays;
 
   amazing-marvin = pkgs.callPackage ./pkgs/amazing-marvin { };
+  mpvScripts.thumbfast = pkgs.callPackage ./pkgs/mpv-scripts/thumbfast { };
 }
