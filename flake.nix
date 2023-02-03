@@ -11,6 +11,13 @@
         utils.follows = "flake-utils";
       };
     };
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs = inputs@{ self, ... }:
@@ -27,6 +34,7 @@
 
         devShells.default = with pkgs;
           mkShell {
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
             buildInputs = [
               nix-update
               nixpkgs-fmt
@@ -36,6 +44,15 @@
               statix
             ];
           };
+
+        checks = {
+          pre-commit-check = pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              nixpkgs-fmt.enable = true;
+            };
+          };
+        };
       }
     );
 }
