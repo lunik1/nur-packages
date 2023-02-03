@@ -23,6 +23,8 @@
       {
         packages = import ./default.nix { inherit pkgs; };
 
+        formatter = pkgs.nixpkgs-fmt;
+
         devShells.default = with pkgs;
           mkShell {
             buildInputs = [
