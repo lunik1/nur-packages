@@ -8,6 +8,7 @@
   amazing-marvin = pkgs.callPackage ./pkgs/amazing-marvin { };
   fsrcnnx-x2-8-0-4-1 = pkgs.callPackage ./pkgs/mpv-shaders/fsrcnnx { variant = "8-0-4-1"; };
   fsrcnnx-x2-16-0-4-1 = pkgs.callPackage ./pkgs/mpv-shaders/fsrcnnx { variant = "16-0-4-1"; };
+  krig-bilateral = pkgs.callPackage ./pkgs/mpv-shaders/krig-bilateral { };
   quality-menu = pkgs.callPackage ./pkgs/mpv-scripts/quality-menu { };
   ssim-super-res = pkgs.callPackage ./pkgs/mpv-shaders/ssim-super-res { };
   xcompose = pkgs.callPackage ./pkgs/xcompose { };
