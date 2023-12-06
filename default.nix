@@ -10,4 +10,5 @@
   ssim-super-res = pkgs.callPackage ./pkgs/mpv-shaders/ssim-super-res { };
   thumbfast = pkgs.callPackage ./pkgs/mpv-scripts/thumbfast { };
   xcompose = pkgs.callPackage ./pkgs/xcompose { };
+  myosevka = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ./pkgs/myosevka/default.nix { });
 }
