@@ -130,7 +130,7 @@ let
 
   makeIosevkaFont = set: privateBuildPlan:
     let superBuildNpmPackage = buildNpmPackage; in
-    (iosevka.override {
+    iosevka.override {
       inherit set privateBuildPlan;
       buildNpmPackage = args: superBuildNpmPackage
         (args // rec {
@@ -153,10 +153,10 @@ let
               My custom build of iosevka.
             '';
             license = licenses.ofl;
-            platforms = iosevka.meta.platforms;
+            inherit (iosevka.meta) platforms;
             maintainers = [ maintainers.lunik1 ];
           };
         });
-    });
+    };
 in
 lib.mapAttrs (name: value: makeIosevkaFont name value) plans
