@@ -12,7 +12,6 @@ with pkgs;
   ls-colors = callPackage ./pkgs/ls-colors { };
   ssim-downscaler = callPackage ./pkgs/mpv-shaders/ssim-downscaler { };
   ssim-super-res = callPackage ./pkgs/mpv-shaders/ssim-super-res { };
-  thumbfast = callPackage ./pkgs/mpv-scripts/thumbfast { };
   xcompose = callPackage ./pkgs/xcompose { };
   myosevka = lib.recurseIntoAttrs (callPackage ./pkgs/myosevka/default.nix { });
 }
