@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
 
   cmakeDir = "../src";
 
-  cmakeFlags = [ "-DECT_FOLDER_SUPPORT=ON" ];
+  cmakeFlags = [ "-DECT_FOLDER_SUPPORT=ON" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ];
 
   meta = with lib; {
     description = "Fast and effective C++ file optimizer";
