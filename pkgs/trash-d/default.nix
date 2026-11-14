@@ -7,13 +7,13 @@
 
 buildDubPackage rec {
   pname = "trash-d";
-  version = "19";
+  version = "21";
 
   src = fetchFromGitHub {
     owner = "rushsteve1";
     repo = "trash-d";
     rev = version;
-    hash = "sha256-jvtBbQSKKib+MkI39YRk9jAo4Ij2X5KViiX4RbELUtI=";
+    hash = "sha256-/spFB2/LUbf/uWAZQ88Y5HIPLCPmN/KJpyUTvzICyHM=";
   };
 
   dubLock = {
