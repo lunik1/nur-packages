@@ -41,6 +41,9 @@ buildDubPackage rec {
     homepage = "https://github.com/rushsteve1/trash-d";
     license = licenses.mit;
     maintainers = with maintainers; [ lunik1 ];
-    platforms = [ "x86_64-linux" ];
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
   };
 }
