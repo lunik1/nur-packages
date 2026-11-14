@@ -2,7 +2,7 @@
   lib,
   buildDubPackage,
   fetchFromGitHub,
-  dmd,
+  ldc,
 }:
 
 buildDubPackage rec {
@@ -20,7 +20,13 @@ buildDubPackage rec {
     dependencies = { };
   };
 
-  compiler = dmd;
+  compiler = ldc;
+
+  # disable static linking: stdenv has no static glibc/pthread
+  postPatch = ''
+    substituteInPlace dub.json \
+      --replace-fail '"dflags-linux-ldc": ["-static"]' '"dflags-linux-ldc": []'
+  '';
 
   doCheck = true;
 
